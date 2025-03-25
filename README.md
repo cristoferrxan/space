@@ -1,107 +1,130 @@
-
-
-readme_filename = "README.html"
-readme_content = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>README - Space</title>
+    <title>Galeria - Documentação</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 40px;
-            padding: 20px;
-            background-color: #f4f4f4;
             line-height: 1.6;
+            margin: 40px;
+            max-width: 800px;
         }
         h1, h2 {
             color: #333;
         }
         pre {
-            background: #eee;
+            background: #f4f4f4;
             padding: 10px;
             border-radius: 5px;
             overflow-x: auto;
         }
-        code {
-            background: #ddd;
-            padding: 2px 5px;
-            border-radius: 3px;
-        }
     </style>
 </head>
 <body>
-    <h1>Projeto Space</h1>
-    <p>O <strong>Space</strong> é um projeto baseado no framework <strong>Django</strong> para desenvolvimento web. 
-       Este projeto foi criado para fins de aprendizado e desenvolvimento, permitindo que qualquer pessoa, 
-       mesmo iniciantes, consiga rodá-lo sem dificuldades.</p>
+    <h1>📸 Galeria - Aplicação Django</h1>
+    <p>Bem-vindo ao repositório do projeto <strong>Galeria</strong>, uma aplicação Django para gerenciamento de imagens.</p>
     
-    <h2>Pré-requisitos</h2>
-    <p>Antes de instalar o projeto, certifique-se de ter os seguintes requisitos:</p>
-    <ul>
-        <li>Python 3.8 ou superior instalado (<a href="https://www.python.org/downloads/">Baixar aqui</a>)</li>
-        <li>Git instalado (<a href="https://git-scm.com/downloads">Baixar aqui</a>)</li>
-        <li>Gerenciador de pacotes <code>pip</code></li>
-        <li>Virtualenv para criar ambientes isolados (opcional, mas recomendado)</li>
-    </ul>
+    <h2>📌 Sobre o Projeto</h2>
+    <p>Este projeto utiliza Django como framework principal e está configurado para servir arquivos estáticos e templates.</p>
     
-    <h2>Instalação</h2>
-    <p>Para instalar e executar o projeto no seu computador, siga os passos abaixo:</p>
+    <h2>🏗 Estrutura do Projeto</h2>
     <pre>
-    # Clone o repositório
-    git clone https://github.com/seu-usuario/space.git
-    
-    # Entre no diretório do projeto
-    cd space
-    
-    # Crie e ative um ambiente virtual (opcional, mas recomendado)
-    python -m venv venv
-    source venv/bin/activate  # Linux/macOS
-    venv\Scripts\activate  # Windows
-    
-    # Instale as dependências do projeto
-    pip install -r requirements.txt
-    
-    # Realize as migrações do banco de dados
-    python manage.py migrate
-    
-    # Execute o servidor local
-    python manage.py runserver
+    ├── galeria/
+    │   ├── migrations/
+    │   ├── __init__.py
+    │   ├── admin.py
+    │   ├── apps.py
+    │   ├── models.py
+    │   ├── tests.py
+    │   ├── urls.py
+    │   ├── views.py
+    │
+    ├── setup/
+    │   ├── static/
+    │   ├── __init__.py
+    │   ├── asgi.py
+    │   ├── settings.py
+    │   ├── urls.py
+    │   ├── wsgi.py
+    │
+    ├── static/
+    │   ├── admin/
+    │   ├── assets/
+    │   ├── styles/
+    ├── templates/
+    ├── venv/ (ambiente virtual)
+    ├── .gitignore
+    ├── db.sqlite3
+    ├── manage.py
+    ├── README.md
+    ├── requirements.txt
     </pre>
-    <p>Após executar o servidor, o projeto estará disponível em <a href="http://127.0.0.1:8000" target="_blank">http://127.0.0.1:8000</a>.</p>
     
-    <h2>Estrutura do Projeto</h2>
-    <p>O projeto Space segue a estrutura padrão do Django:</p>
+    <h2>🚀 Como Executar o Projeto</h2>
+    <h3>📌 Pré-requisitos</h3>
+    <p>Antes de começar, certifique-se de ter instalado:</p>
     <ul>
-        <li><strong>setup/</strong> - Diretório principal do projeto.</li>
-        <li><strong>galeria/</strong> - Aplicação principal do projeto.</li>
-        <li><strong>templates/</strong> - Arquivos de template HTML.</li>
-        <li><strong>static/</strong> - Arquivos estáticos (CSS, JS, imagens).</li>
-        <li><strong>db.sqlite3</strong> - Banco de dados SQLite padrão.</li>
+        <li><a href="https://www.python.org/downloads/">Python 3.8+</a></li>
+        <li><a href="https://virtualenv.pypa.io/en/latest/">Virtualenv</a></li>
     </ul>
     
-    <h2>Configuração do Projeto</h2>
-    <p>O arquivo <code>settings.py</code> contém todas as configurações essenciais do projeto, incluindo:</p>
+    <h3>🔧 Passo a Passo</h3>
+    <p>1️⃣ Clone o repositório:</p>
+    <pre>
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
+    </pre>
+    
+    <p>2️⃣ Crie e ative um ambiente virtual:</p>
+    <pre>
+python -m venv venv
+# Ativar no Windows
+venv\Scripts\activate
+# Ativar no Linux/macOS
+source venv/bin/activate
+    </pre>
+    
+    <p>3️⃣ Instale as dependências:</p>
+    <pre>
+pip install -r requirements.txt
+    </pre>
+    
+    <p>4️⃣ Crie e aplique as migrações do banco de dados:</p>
+    <pre>
+python manage.py makemigrations
+python manage.py migrate
+    </pre>
+    
+    <p>5️⃣ Crie um superusuário para acessar o painel administrativo:</p>
+    <pre>
+python manage.py createsuperuser
+    </pre>
+    
+    <p>6️⃣ Execute o servidor Django:</p>
+    <pre>
+python manage.py runserver
+    </pre>
+    <p>Acesse o projeto em <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a>.</p>
+    
+    <h2>📂 Configuração de Variáveis de Ambiente</h2>
+    <p>Crie um arquivo <code>.env</code> na raiz do projeto e defina a variável <strong>SECRET_KEY</strong>:</p>
+    <pre>
+SECRET_KEY=sua_chave_secreta_aqui
+    </pre>
+    
+    <h2>🛠 Tecnologias Utilizadas</h2>
     <ul>
-        <li>Uso de variáveis de ambiente com <code>dotenv</code>.</li>
-        <li>Configuração do banco de dados SQLite.</li>
-        <li>Gerenciamento de arquivos estáticos.</li>
+        <li>Django 4.1</li>
+        <li>Python 3.8+</li>
+        <li>SQLite3</li>
     </ul>
     
-    <h2>Como Contribuir</h2>
-    <p>Se quiser contribuir para o desenvolvimento do projeto, siga os passos:</p>
-    <ol>
-        <li>Crie um fork do repositório.</li>
-        <li>Crie uma branch para suas alterações: <code>git checkout -b minha-branch</code></li>
-        <li>Faça as alterações e as submeta: <code>git commit -m "Minha contribuição"</code></li>
-        <li>Envie as alterações: <code>git push origin minha-branch</code></li>
-        <li>Abra um Pull Request.</li>
-    </ol>
+    <h2>📜 Licença</h2>
+    <p>Este projeto está sob a licença MIT. Sinta-se livre para usá-lo e modificá-lo!</p>
     
-    <h2>Licença</h2>
-    <p>Este projeto está licenciado sob a licença MIT, permitindo seu uso, modificação e distribuição.</p>
+    <hr>
+    <p>✉️ <strong>Dúvidas ou sugestões?</strong> Entre em contato! 🚀</p>
 </body>
-</html>"""
-
-
+</html>
